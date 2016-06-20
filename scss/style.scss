@@ -1,0 +1,782 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$dark-color: #263746;
+$light-color: #eaf2fa;
+$light-color-2: #6b89a4;
+$text-color: #696969;
+$font-text: "TexGyreAdventor", Arial, sans-serif; 
+$font-heading: "Oswald", Arial, sans-serif;
+
+// Fonts
+@include font-face("TexGyreAdventor", font-files("texgyreadventor-regular.otf","texgyreadventor-regular.woff", "texgyreadventor-regular.woff2"), "texgyreadventor-regular.eot", normal, normal);
+@include font-face("TexGyreAdventor", font-files("texgyreadventor-italic.otf", "texgyreadventor-italic.woff", "texgyreadventor-italic.woff2"), "texgyreadventor-italic.eot", normal, italic);
+@include font-face("TexGyreAdventor", font-files("texgyreadventor-bold.otf", "texgyreadventor-bold.woff", "texgyreadventor-bold.woff2"), "texgyreadventor-bold.eot", bold, normal);
+@include font-face("TexGyreAdventor", font-files("texgyreadventor-bolditalic.otf", "texgyreadventor-bolditalic.woff", "texgyreadventor-bolditalic.woff2"), "texgyreadventor-bolditalic.eot", bold, italic);
+
+@mixin button-transition() {
+	@include transition-property(background-color);
+	@include transition-duration(400ms);
+}
+
+// Basic Styles
+body {
+	background-color: #FFF;
+	color: $text-color;
+	font-size: 14px;
+	font-family: $font-text;
+	line-height: 1.571;
+	font-weight: 400;
+	font-style: normal;
+	margin-top: 40px;
+}
+#main-overflow {
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+// Headings
+#{headings(all)} {
+	color: $dark-color;
+	font-family: $font-heading;
+	font-weight: 400;
+	margin: 0 0 0.65em;
+}
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size: 3em;
+}
+h3 {
+	font-size: 2em;
+}
+h4 {
+	font-size: 1.5em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.8em;
+}
+p {
+	margin-bottom: 2em;
+}
+// Links
+a {
+	color: #263746;
+	text-decoration: underline;	
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	color: #eb424a;
+}
+// Lists
+ul,
+ol {
+	margin-bottom: 2em;
+}
+ul li {
+	list-style-type: none;
+	list-style-position: inside;
+	position: relative;
+	padding-left: 1em;
+}
+ul li:before {
+	content: "\2013\00a0";
+	position: absolute;
+	left: 0px;
+}
+strong,
+b {
+	font-weight: 700;
+}
+i {
+	font-weight: italic;
+}
+// Responsive images
+img {
+    max-width: 100%;
+    height: auto;
+}
+// Forms
+input {
+	background-color: #FFF;
+	border: 1px solid #696969;
+	color: #696969;
+	line-height: 3em;
+	padding: 0 1em;
+	font-size: 1em;
+	font-family: $font-text;
+}
+input.valid:required {
+	border-color: #79d78d;
+}
+input.invalid:required {
+	border-color: #eb424a;
+}
+input[type="submit"] {
+	cursor: pointer;
+	@include button-transition();
+}
+.hidden-input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+input[type="radio"],
+input[type="file"] {
+	@extend .hidden-input;
+}
+
+input[type="file"] + label {
+	@extend input;
+	height: 3em;
+	position: relative;
+	padding-right: 50px;
+	cursor: pointer;
+}
+input[type="file"] + label:after {
+	position: absolute;
+	right: 20px;
+	top: 4px;
+	content: image-url("file.png");
+}
+
+input[type="file"]:focus + label {
+    cursor: pointer;
+	outline: 2px dotted #000;
+}
+input[type="file"] + label * {
+	pointer-events: none;
+}
+
+textarea {
+	@extend input;
+	line-height: 1.571;
+	padding: 1em;
+	resize: vertical;
+}
+label.check:before {
+	content: image-url("kruh.png");
+	position: relative;
+	top: 0.3em;
+	padding-right: 0.5em;
+	cursor: pointer;
+}
+label.check {
+	cursor: pointer;
+	margin-bottom: 1em;
+}
+input:checked + label.check:before {
+	content: image-url("kruh-aktivni.png");
+}
+// Hlavicka
+#hlavicka {
+	.top-nav {
+		padding-top: 54px;
+		a {
+			font-size: 1.714em;
+			font-weight: 400;
+			font-family: $font-heading;
+			text-decoration: none;
+			@include inline-block;
+			padding: 0 0.7em 0;
+			@include transition-property(color);
+			@include transition-duration(400ms);
+		}
+		a:hover {
+			color: $light-color-2;
+		}
+	}
+	.sub-title {
+			font-size: 3em;
+			font-family: $font-heading;
+			margin-top: 1em;
+			margin-bottom: 0.4em;
+	}
+	.notebook  {
+		img {
+			position: relative;
+			left: -16%;
+			width: 116%;
+			max-width: 116%;
+			margin-top: 60px;
+		}
+	}
+	.big-button {
+		background-color: $dark-color;
+		color: #FFF;
+		text-transform: uppercase;
+		@include inline-block;
+		text-decoration: none;
+		font-family: $font-heading;
+		font-size: 2.571em;
+		padding: 0.69444em 1.83333em;
+		margin-top: 32px;
+		@include button-transition();
+	}
+	.big-button:hover {
+		background-color: $light-color-2;
+	}
+	margin-bottom: 80px;
+}
+// Co delame
+#co-delame {
+	background-color: #6b89a4;
+	padding-top: 3em;
+	padding-bottom: 0.5em;
+	background: {
+		image: image-url("co-delame-pozadi.png");
+		repeat: no-repeat;
+		position: top center;
+	}
+	h2 {
+		margin-bottom: 0.4em;
+	}
+	@include background-size("contain");
+	ul li {
+		font-size: 2.571em;
+		padding-left: 1.5em;
+		font-family: $font-heading;
+		font-weight: 300;
+		line-height: 1.3333em;
+	}
+	ul li:before {
+		top: 0.2em;
+	}
+	.light-side * {
+		color: #FFF;
+	}
+	.dark-side * {
+		color: $dark-color;
+	}
+	.light-side ul li:before {
+		content: image-url("zatrzitko2.png");
+	}
+	.dark-side ul li:before {
+		content: image-url("krizek1.png");
+	}
+	.small-text {
+		margin-top: 2em;
+		text-align: center;
+	}
+}
+
+// Co dostanete
+#co-dostanete {
+	padding-top: 40px;
+	padding-bottom: 25px;
+}
+.small-heading {
+	font-size: 1em;
+	color: $text-color;
+	font-weight: 700;
+	font-family: $font-text;
+}
+
+// Banner
+#banner {
+	background-color: $light-color;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+	.rychlikoderi-link-box {
+		text-align: center;
+		padding-top: 13px;
+		a {
+			font-size: 30px;
+			text-decoration: none;
+			font-family: $font-heading;
+		}
+		a:hover {
+			text-decoration: underline;
+		}		
+	}
+	.srdce {
+		position: relative;
+		left: -60px;
+	}
+	.zip-file {
+		position: relative;
+		left: -50px;
+	}
+}
+// Co potrebujeme
+#co-potrebujeme {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+// Kdo za tim stoji
+#kdo-za-tim-stoji {
+	padding-top: 40px;
+	padding-bottom: 45px;
+	background-color: $light-color-2;
+	* {
+		color: #FFF;
+	}
+	.logo-wrongware {
+		display: block;
+		margin-top: 35px;
+		margin-bottom: 20px;
+	}
+	.small-text {
+		text-align: center;
+		padding-right: 70px;
+	}
+	.profile {
+		text-align: center;
+	}
+	.name {
+		font-size: 1.285em;
+		margin-top: 0.7em;
+	}
+	.job-content {
+		color: $dark-color;
+	}
+}
+
+// Kalkulace
+#kalkulace {
+	padding-top: 40px;
+	margin-bottom: 20px;
+	.price-box {
+		background-color: $light-color;
+		color: $dark-color;
+		padding: 1.5em 1.75em 1px;
+		margin-bottom: 2em;
+	}
+	.cena {
+		font-size: 1.4em;
+	}
+	label.check {
+		@include inline-block;
+		padding-right: 11px;
+	}
+	.counter-box {
+		position: relative;
+		@include inline-block;
+		margin-left: 1em;
+	}
+	.counter-up,
+	.counter-down {
+		position: absolute;
+		width: 13px;
+		height: 11px;
+		right: -27px;
+		cursor: pointer;
+	}
+	.counter-up {
+		background-image: image-url("sipka-nahoru.png");
+		top: 7px;
+	}
+	.counter-down {
+		background-image: image-url("sipka-dolu.png");
+		bottom: 7px
+	}	
+	input.counter {
+		text-align: center;
+		width: 4em;
+		position: relative;
+	}
+}
+
+// Kalkulace 2
+#kalkulace-2 { 
+	input {
+		width: 100%;
+		@include inline-block;
+		margin: 10px 0 20px;
+	}
+	.radio-box {
+		display: block;
+		margin-top: 19px;
+	}
+	textarea {
+		width: 100%;
+		height: 129px;
+		display: block;
+		margin-bottom: 20px;
+	}
+	input[type="submit"] {
+		display: block;
+		margin: 20px auto 63px;
+		max-width: 280px;
+		background-color: $dark-color;
+		color: #FFF;
+		font-family: $font-heading;
+		font-size: 2.57em;
+		border: none;
+		text-transform: uppercase;
+		padding: 0.5em 1em;
+		line-height: 1.5;
+	}
+	input[type="submit"]:hover {
+		background-color: #6b88a3;
+		cursor: pointer;
+	}
+	label.check {
+		margin-right: 1em;
+	}
+	label.check:before {
+		content: image-url("radio-grey-inactive.png");
+	}
+	input:checked + label.check:before {
+		content: image-url("radio-grey-active.png");
+	}
+	.calendar-wrap {
+		position: relative;
+	}
+	.calendar-wrap:after {
+		content: image-url("kalendar.png");
+		position: absolute;
+		right: 20px;
+		top: 40px;
+	}
+	.calendar-wrap input {
+		padding-right: 50px;
+	}
+}
+
+// Kontakt
+#kontakt {
+	background-color: $dark-color;
+	padding-top: 2.1em;
+	padding-bottom: 4em;
+	* {
+		color: #FFF;
+	}
+	p {
+		margin-bottom: 1em;
+	}
+	input,
+	textarea {
+		color: $text-color;
+	}
+	input {
+		width: 100%;
+		@include inline-block;
+		margin: 10px 0 20px;
+	}
+	textarea {
+		height: 173px;
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+	.input-inline-field {
+		float: left;
+		input {
+			width: 93px;
+			margin: 0 0 0 7px;
+		}
+	}
+	input[type="submit"] {
+		width: auto;
+		margin: 0px;
+		background-color: #6c4837;
+		color: #FFF;
+		font-family: $font-heading;
+		font-size: 1.285em;
+		border: none;
+		text-transform: uppercase;
+		padding: 0em 1.1em;
+		line-height: 2.3346em;
+		float: right;
+	}
+	input[type="submit"]:hover {
+		background-color: lighten(#6c4837, 10%);
+	}
+	.message-form {
+		position: relative;
+		top: 14px;
+	}
+}
+
+// Google mapa
+.google-map {
+	width: 100%;
+	height: 369px;
+	display: block;
+}
+
+// Paticka
+#footer {
+	background-color :$dark-color;
+	padding-top: 2em;
+	padding-bottom: 1.2em;
+	* {
+		color: #b4b4b4;
+	}
+	.copyright {
+		.wrongware-copyright-logo {
+			margin-bottom: 1em;
+		}
+		p {
+			margin-bottom: 1em;
+		}
+	}
+	nav a {
+		text-decoration: none;
+		padding: 0 1.2em 0 0;
+		@include inline-block;
+	}
+	nav a:hover {
+		text-decoration: underline;
+	}
+	.social-buttons {
+		text-align: right;
+	}
+	.twitter,
+	.facebook,
+	.google {
+		width: 55px;
+		height: 55px;
+		position: relative;
+		@include inline-block;
+		margin-left: 0.8em;
+	}
+	.twitter:after,
+	.google:after,
+	.facebook:after {
+		opacity: 0;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		@include transition-property(opacity);
+		@include transition-duration(1s);	
+	}
+	.twitter:hover:after,
+	.google:hover:after,
+	.facebook:hover:after {
+		opacity: 1;
+	}
+	.twitter {
+		background-image: image-url("twitter-logo.png");
+		margin-left: 0;		
+	}
+	.twitter:after {
+		content: image-url("twitter-logo-active.png");
+	}
+	.facebook {
+		background-image: image-url("facebook-logo.png");
+	}
+	.facebook:after {
+		content: image-url("facebook-logo-active.png");
+	}
+	.google {
+		background-image: image-url("google-logo.png");
+	}
+	.google:after {
+		content: image-url("google-logo-active.png");
+	}
+}
+
+// Media queries
+$xs-break: 480px;
+$sm-break: 768px;
+$md-break: 992px;
+
+.menu-icon {
+	display: block;
+	width: 50px;
+	height: 40px;
+	background-image: image-url("menu.png");
+	background-position: center;
+	@include background-size(70%);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	float: right;
+	display: none;
+}
+@media(max-width: $md-break) {
+	h1 {
+		font-size: 2.5em;
+	}
+	h2 {
+		font-size: 2.3em;
+	}
+	h3 {
+		font-size: 2em;
+	}
+	h4 {
+		font-size: 1.5em;
+	}
+	h5 {
+		font-size: 1em;
+	}
+	h6 {
+		font-size: 0.8em;
+	}	
+	#hlavicka {
+		font-size: 10px;
+		.notebook img {
+			left: 0%;
+			max-width: 350px;
+			margin-top: 50px;
+		}
+		nav.top-nav {
+			display: none;
+			clear: both;
+			position: absolute;
+		    width: 151px;
+		    height: auto;
+		    background-color: #6b89a4;
+		    top: 69px;
+		    padding-top: 18px;
+		    padding-bottom: 9px;
+		    z-index: 20;
+		    color: #FFF;
+		    margin-top: 0px;
+		    right: 15px;
+			a {
+				display: block;
+				text-align: center;
+				color: #FFF;
+				font-size: 2em;
+				padding-bottom: 0.3em;
+			}
+		}
+		.menu-area {
+			position :relative;
+		}
+		.menu-icon {
+			display: block;
+			position: relative;
+			top: 29px;
+		}
+	}
+	#co-delame {
+		.dark-side,
+		.light-side {
+			font-size: 12px;
+		}
+	}
+	.margin-top-fix {
+		margin-top: 1em;
+		display: block;
+	}
+
+}
+// JS class
+body.menu-open #hlavicka nav.top-nav {
+	display: block;
+}
+body.menu-open #hlavicka .menu-icon {
+	background-color: #6b89a4;
+}
+@media(max-width: $sm-break) {
+	#hlavicka {
+		.sm-flex {
+			float: left;
+			display: inline-block;
+		}
+		.logo-rychlikoderi {
+			display: inline-block;
+		}
+		.logo-rychlikoderi img {
+			width: 305px;
+		}
+		.menu-icon {
+			top: 19px;
+		}
+		.sub-title {
+			margin-top: 2em;
+		}
+		nav.top-nav {
+			top: 59px;
+		}
+	}
+
+	#banner {
+		.rychlikoderi-link-box,
+		.srdce {
+			margin-bottom: 40px;
+		}
+		.srdce {
+			left: 0px;
+		}
+		.zip-file {
+			left: 0px;	
+		}
+	}
+	#kdo-za-tim-stoji {
+		.logo-wrongware {
+			margin-top: 0px;
+		}
+		.logo-wrongware img {
+			max-width: 270px;
+		}
+		.small-text {
+			padding: 0;
+			text-align: left;
+			margin-bottom: 3em;
+		}
+	}
+	.google-map {
+		display: none;
+	}
+	#kontakt {
+		.input-float-right {
+			float: left;
+			clear: left;
+			margin-top: 1em;
+		}
+	}
+	#footer {
+		.social-buttons {
+			float: left;
+			margin-top: 2em;
+		}
+	}
+	.sm-center {
+		text-align: center;
+	}
+}
+@media(max-width: $xs-break) {
+	#kdo-za-tim-stoji .profile {
+		width :100%;
+		margin-bottom: 35px;
+	}
+}
+@media(max-width: 461px) {
+	#hlavicka {
+		.logo-rychlikoderi img {
+			width: 185px;
+		}
+		.menu-icon {
+			width: 35px;
+    		height: 29px;
+    		top: 9px;
+		}
+		nav.top-nav {
+			top: 38px;
+			position: static;
+			width: 100%;
+			padding-top: 40px;
+			clear: both;
+			margin-bottom: -30px;
+			background-color: #FFF;
+			margin-bottom: -40px;
+			a {
+				color: #263746;
+			}
+		}
+	}
+}
+@media(max-width: 389px) {
+	#hlavicka {
+		.notebook img {
+			max-width: 100%;
+		}
+	}
+}

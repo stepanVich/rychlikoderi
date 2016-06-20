@@ -1,0 +1,284 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		meta(name="description", content="Popis webu")
+		meta(name="keywords", content="Klicove slova")
+		meta(name="author", content="Rychli koderi")
+		title Rychlí kodéři
+		link(type="text/css", rel="stylesheet", href="css/style.css", media="all")
+		link(type="text/css", rel="stylesheet", href="css/bootstrapgrid.css", media="all")
+		link(href='https://fonts.googleapis.com/css?family=Oswald:400,700,300',rel='stylesheet',type='text/css')
+	body
+		#main-overflow
+			header#hlavicka
+				.container
+					.row
+						.col-sm-6.sm-flex
+							.logo-rychlikoderi
+								.h1
+									a(href="/")
+										img(src="src-comp/RychliKoderi_logo.png", alt="Rychlí kodéři - Logo")
+						.col-sm-6.menu-area
+							.menu-icon
+							nav.top-nav
+								a(href="#") O nás
+								a(href="#") Blog
+								a(href="#") Kariéra
+								a(href="#") Kontakt
+					.row.sm-center
+						.col-sm-6
+								h3.sub-title Kódování mikrowebů z PSD do HTML za 3 dny
+								a.big-button(href="#objednavka") Objednat
+						.col-sm-6
+							.notebook
+								img(src="src-comp/macbook-3.png", alt="Notebook s referencí")
+
+			section#co-delame
+				.container
+					.row
+						.col-sm-6.light-side
+							h2 Co děláme?
+							ul
+								li mikroweby
+								li malostránkové weby
+								li slidery, jednodušší paralax
+						.col-sm-6.dark-side
+							h2 Co neděláme?
+							ul
+								li e-shopy
+								li portály
+								li rozsáhlé webové prezentace
+							p.small-text S většími zakázkami se obraťte na #[a(href="http://www.superkoderi.cz/") SuperKodéry.cz]
+			section#co-dostanete
+				.container
+					h2 Co dostanete?
+					.row
+						.col-sm-6
+							p.
+								Odkaz, kde si můžete nakódovanou šablonu prohlédnout. V ceně je možné 5 revizí. Jakmile nám práci odsouhlasíte (do 7 dnů, pak je automaticky za odsouhlašenou a vystavujeme fakturu), pošleme Vám odkaz ke stažení balíku v .zipu a fakturu se 14denní splatností.
+							h3.small-heading Garance
+							p.
+								Garantujeme dodání výsledného balíku do 3 pracovních dnů. Pokud termín nestihneme lorem ipsum dolor sit amet consectetur adipiscing. Výjimkou jsou objektivní důvody. Nebo se dohodneme jinak.
+
+						.col-sm-6
+							h3.small-heading Technicky
+							p.
+								HTML, CSS i JavaScript posíláme vždy v minifikované podobě, ale v balíku najdete i zdrojové kódy s komentářem.
+							.row
+								.col-sm-5
+									ul
+										li mobilní verze
+										li HTML5, CSS3
+										li umíme jQuery
+										li používáme SASS
+										li Retina Ready
+								.col-sm-7
+									ul
+										li tiskový styl
+										li měřící kódy
+										li sémantický, minimalistický a čistý kód
+										li validní kód a rychlý kód
+										li responzivní design
+			aside#banner
+				.container
+					.row
+						.col-sm-6.rychlikoderi-link-box
+							a(href="#") rychlikoderi.cz
+						.col-sm-3
+							img.srdce(src="/src-comp/sip.png", alt="Probodnuté srdce")
+						.col-sm-3
+							img.zip-file(src="/src-comp/zip.png", alt="Zip file")
+
+			section#co-potrebujeme
+				.container
+					h2 Co potřebujeme
+					.row
+						.col-sm-6
+							ul
+								li vrstvené a dobře popsané <a href="">PSD</a>
+								li použité fonty vč. webové verze (pozor na diakritiku)
+								li favicon
+								li komentář grafika
+								li odkaz na podklady (např. set obrázků pro slider)
+								li responzivní design ano/ne
+								li Retina Ready ano/ne (vyžaduje obrázky ve dvojnásobném rozlišení)
+						.col-sm-6
+							ul
+								li termín odevzdání
+								li pozice elementů Hx
+								li uveďte konkrétní slider, pokud chcete
+								li používáte-li ikonky, dejte nám odkaz na icon set (nebo pošlete je-li placený)
+								li pořadí obsahových bloků pro SEO
+								li texty pro nadpis stránek (title) a meta tag description
+								li můžeme si dát do referencí?
+			section#kdo-za-tim-stoji
+				.container
+					.row
+						.col-sm-6
+							h2 Kdo za tím stojí
+							a.logo-wrongware(href="https://wrongware.cz/")
+								img(src="src-comp/wrongware-big-logo.png", alt="Wrongware - logo")
+							div.small-text firemní webové prezentace
+						.col-sm-6
+							.row
+								.col-sm-4.col-xs-6.profile
+									.avatar
+										img(src="src-comp/oblicej.png", alt="Patrik Šíma")
+									h4.name Patrik Šíma
+									.job-content náplň práce
+								.col-sm-4.col-xs-6.profile.col-sm-offset-2
+									.avatar
+										img(src="src-comp/oblicej.png", alt="Tomáš Langer")
+									h4.name Tomáš Langer
+									.job-content náplň práce
+			section#kalkulace
+				.container
+					h2 Kolik to stojí?
+					.row
+						.col-md-5.col-sm-6
+							.price-box
+								p Myslíte si, že je grafický návrh:
+								p
+									
+									input(type="radio", name="selection1", id="radio-id-jednoduchy", value=1, checked="checked")
+									label.check(for="radio-id-jednoduchy") jednoduchý
+									input(type="radio", name="selection1", id="radio-id-prumerny", value=2)
+									label.check(for="radio-id-prumerny") průměrný
+									input(type="radio", name="selection1", id="radio-id-slozity", value=3)
+									label.check(for="radio-id-slozity") složitý
+								p Počet podstránek:
+									span.counter-box
+										input.counter#counter-input(type="text", value=1)
+										span.counter-up
+										span.counter-down
+								p Předpokládaná cena: <strong class="cena">7.800 Kč</strong> bez DPH
+						.col-md-7.col-sm-6					
+							p.
+								Výpočet částky je pouze orientační. Po odeslání objednávky zpracujeme kalkulaci a jakmile nám ji schválíte, začneme kódovat.
+
+							p.
+								Kalkulaci Vám zpracujeme do 24 hodin v pracovní dny.
+
+							h3.small-heading Obvyklé časy a cena
+							ul
+								li titulní stránka 6–8 hodin
+								li každá podstránka 1 hodina
+								li hodina kódování 600 Kč bez DPH
+
+			section#kalkulace-2
+				.container
+					h2 Chcete kalkulaci?
+					form.kalkulace-form
+						.row
+							.col-md-4.col-sm-6
+								label(for="kalkulace-name") Vaše jméno: *
+									input(id="kalkulace-name", type="text", value="", name="kalkulace-name", required)
+							.col-md-4.col-sm-6
+								label(for="kalkulace-email") E-mail: *
+									input(id="kalkulace-email",type="email", value="@", name="kalkulace-email", required)					
+							.col-md-4.col-sm-6
+								label(for="kalkulace-tel") Telefon: *
+									input(id="kalkulace-tel",type="text", value="", name="kalkulace-tel", required)			
+						
+							.col-md-4.col-sm-6
+								label(for="kalkulace-firma") Název firmy:
+									input(id="kalkulace-firma",type="text", value="", name="kalkulace-firma")
+							.col-md-4.col-sm-6
+								label(for="kalkulace-web") Máte stávající web?
+									input(id="kalkulace-web",type="text", value="http://", name="kalkulace-web")					
+							.col-md-4.col-sm-6
+								.calendar-wrap
+									label(for="kalkulace-termin") Termín odevzdání: *
+										input(id="kalkulace-termin", type="text", value="",placeholder="dd.mm.rrrr", name="kalkulace-termin", required)
+						
+							.col-md-4.col-sm-6
+								label(for="file-select") Grafické podklady (max 20 MB):
+								input.custom-file-ui(id="file-select", type="file", name="file", data-multiple-caption="{count} files selected", multiple)
+								label(for="file-select")
+							.col-md-4.col-sm-6
+								label(for="kalkulace-url") URL podkladů:
+									input(id="kalkulace-url",type="text", value="http://", name="kalkulace-url")					
+							.col-md-4.col-sm-6
+								div Můžeme práci umístit do referencí?
+									.radio-box
+										input(type="radio", name="reference", id="radio-id-ano", value="ano", checked)
+										label.check(for="radio-id-ano") Ano
+										input(type="radio", name="reference", id="radio-id-ne", value="ne")
+										label.check(for="radio-id-ne") Ne
+									
+						label.margin-top-fix(for="kalkulace-poznamky") Poznámky:
+							textarea#kalkulace-poznamky
+						p Odesláním formuláře souhlasíte s <a href="">obchodními podmínkami</a> služby.
+						input(type="submit", value="Objednat")
+			section#kontakt
+				.container
+					.row
+						.col-sm-3
+							h2 Kontakt
+							address
+								p
+									| <strong>Rychlíkodéři</strong><br>
+									| Ulice 15<br>
+									| PSČ Město<br>
+								p
+									a(href="mailto:info@rychlikoderi.cz") info@rychlikoderi.cz
+								p +420 728 123 456
+								p IČ: 12345678
+						form.message-form
+							.col-sm-4
+								.input-field
+									label(for="message-name") Vaše jméno: *
+										input#message-name(type="text", value="", name="message-name", required)
+								.input-field
+									label(for="message-email") E-mail: *
+										input#message-email(type="email", value="", name="message-email", required)
+								.input-field
+									label(for="message-tel") Telefon:
+										input#message-tel(type="text", value="", name="message-tel")
+							.col-sm-5
+								.input-field
+									label(for="message-text") Vaše zpráva:
+										textarea#message-text
+								.input-inline-field
+									label(for="message-captcha") CAPTCHA:
+										input#message-captcha(type="text", value="", name="message-captcha")
+								.input-float-right
+									input(type="submit", value="Odeslat")
+
+			aside.google-map#google-map-1
+
+			script
+				|var map;
+				|function initMap() {
+				|	map = new google.maps.Map(document.getElementById('google-map-1'), {
+				|		center: {lat: 49.896527, lng: 18.190549},
+				|		zoom: 15,
+				|		scrollwheel: false
+				|	});
+				|};
+			script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgf_yUgyUm7Zy26ZSCFEAyxlz-Qmzhogk&callback=initMap", async, defer)
+
+			footer#footer
+				.container
+					.row
+						.copyright.col-md-3
+							a(href="#").wrongware-copyright-logo
+								img(src="/src-comp/WRONGWARE_logo.png", alt="Copyright logo")
+							p © 2014 Rychlíkodéři
+
+						nav.col-md-6
+							a(href="#") Obchodní podmínky
+							a(href="#") O nás
+							a(href="#") Blog
+							a(href="#") Kariéra
+							a(href="#") Kontakt
+
+						.social-buttons.col-md-3
+							a.twitter(href="#")
+							a.facebook(href="#")
+							a.google(href="#")
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+		script(type="text/javascript", src="js/script.js")
+
