@@ -67,7 +67,7 @@ p {
 }
 // Links
 a {
-	color: #263746;
+	color: $dark-color;
 	text-decoration: underline;	
 }
 a:hover {
@@ -645,6 +645,9 @@ $md-break: 992px;
 				font-size: 2em;
 				padding-bottom: 0.3em;
 			}
+			a:hover {
+				color: $dark-color;
+			}
 		}
 		.menu-area {
 			position :relative;
@@ -768,7 +771,7 @@ body.menu-open #hlavicka .menu-icon {
 			background-color: #FFF;
 			margin-bottom: -40px;
 			a {
-				color: #263746;
+				color: $dark-color;
 			}
 		}
 	}
